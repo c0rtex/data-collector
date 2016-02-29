@@ -23,7 +23,7 @@
   </style>
 </head>
 
-<body ng-cloak ng-app="dataCollectorApp" layout="column">
+<body ng-cloak ng-app="dataCollectorApp" layout="column" ng-controller="MainController as mc">
 
 <!-- Container -->
   <div flex layout="row">
@@ -163,8 +163,11 @@
 
     <!-- Content -->
     <md-content flex layout="column" id="content">
-      <md-toolbar class="md-whiteframe-z1 headline">
-        <h2>Answer Field</h2>
+      <md-toolbar layout="row" class="md-whiteframe-z1 headline">
+        <md-button id="main" class="menu" ng-click="mc.toggleSidenav()" aria-label="Show Sidenav" hide-gt-sm>
+          <md-icon md-font-set="material-icons">menu</md-icon>
+        </md-button>
+        <h2>Forms</h2>
       </md-toolbar>
     </md-content>
   </div>
