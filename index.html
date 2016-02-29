@@ -10,6 +10,7 @@
 
   <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
   <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css" />
+  <link rel="stylesheet" href="./bower_components/angular-material-data-table/dist/md-data-table.min.css" />
   <link rel="stylesheet" href="./assets/app.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -42,7 +43,7 @@
         <md-list>
 
           <md-list-item ng-repeat="tool in mc.tools">
-            <md-button flex ng-click="mc.selectTool(tool)" ng-href="#/{{tool.href}}">
+            <md-button flex ng-click="mc.selectTool(tool)" ng-href="#/{{tool.href}}" ng-class="{'selected': tool === mc.toolSelected}">
               <md-icon md-font-set="material-icons" class="tool">{{tool.icon_id}}</md-icon>
               {{tool.item}}
             </md-button>
@@ -59,13 +60,13 @@
           <md-button id="main" class="menu" ng-click="mc.toggleSidenav()" aria-label="Show Sidenav" hide-gt-sm>
             <md-icon md-font-set="material-icons">menu</md-icon>
           </md-button>
-          <md-icon class="headline-icon" md-font-set="material-icons">{{mc.toolSelected.icon_id}}</md-icon>
-          <h2>{{mc.toolSelected.item}}</h2>
+          <md-icon ng-hide="!mc.toolSelected.icon_id" class="headline-icon" md-font-set="material-icons">{{mc.toolSelected.icon_id}}</md-icon>
+          <h2>{{mc.toolSelected.item || 'Data Collector' }}</h2>
         </div>
       </md-toolbar>
 
       <md-content layout="column" flex>
-
+        <div ng-view class="layout-content"></div>
       </md-content>
     </md-content>
   </div>
@@ -75,6 +76,8 @@
   <script src="./bower_components/angular-aria/angular-aria.min.js" type="text/javascript"></script>
   <script src="./bower_components/angular-messages/angular-messages.min.js" type="text/javascript"></script>
   <script src="./bower_components/angular-material/angular-material.min.js" type="text/javascript"></script>
+  <script src="./bower_components/angular-route/angular-route.min.js" type="text/javascript"></script>
+  <script src="./bower_components/angular-material-data-table/dist/md-data-table.min.js" type="text/javascript"></script>
 
   <script src="src/app.js" type="text/javascript"></script>
   <script src="src/services.js" type="text/javascript"></script>

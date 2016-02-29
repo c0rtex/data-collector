@@ -95,7 +95,7 @@
         item: 'Subset',
         icon_code: '&#xE8F9;',
         icon_id: 'work',
-        href: 'Subset'
+        href: 'subset'
       },
       {
         item: 'Text',

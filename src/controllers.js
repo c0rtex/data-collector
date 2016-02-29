@@ -21,8 +21,7 @@
     toolService
       .loadAllTools()
       .then(function(tools) {
-        self.tools        = [].concat(tools);
-        self.toolSelected = tools[0];
+        self.tools = [].concat(tools);
       });
 
     function toggleSidenav() {
