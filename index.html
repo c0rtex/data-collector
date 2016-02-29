@@ -34,128 +34,19 @@
         class="site-sidenav md-whiteframe-z2 md-primary">
 
       <md-toolbar>
-        <h3>Data Collector</h3>
+        <h3>Tools</h3>
       </md-toolbar>
 
-      <!-- Links -->
+      <!-- Tools -->
       <md-content flex layout="column">
         <md-list>
 
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE8AF;</md-icon> <!-- question_answer -->
-              Answer Field
+          <md-list-item ng-repeat="tool in mc.tools">
+            <md-button flex ng-click="mc.selectTool(tool)" ng-href="#/{{tool.href}}">
+              <md-icon md-font-set="material-icons" class="tool">{{tool.icon_id}}</md-icon>
+              {{tool.item}}
             </md-button>
           </md-list-item>
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE87A;</md-icon> <!-- explore -->
-              Database
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE886;</md-icon> <!-- group_work -->
-              Entry Point
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button class="selected">
-              <md-icon md-font-set="material-icons" class="tool">&#xE8D2;</md-icon> <!-- subject -->
-              Forms
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE887;</md-icon> <!-- help -->
-              Help
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE413;</md-icon> <!-- photo_library -->
-              Image
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE8B6;</md-icon> <!-- search -->
-              Lookup
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE8DE;</md-icon> <!-- toc -->
-              Other
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE8D3;</md-icon> <!-- people -->
-              Partner
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE862;</md-icon> <!-- assignment_turned_in -->
-              Program
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE163;</md-icon> <!-- send -->
-              Question
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE3BA;</md-icon>
-              Rule
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE8B0;</md-icon>
-              Rx
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE89C;</md-icon>
-              Subset
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE873;</md-icon>
-              Text
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE926;</md-icon> <!-- euro_symbol -->
-              Tote
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE157;</md-icon> <!-- link -->
-              Url
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE7FD;</md-icon> <!-- person -->
-              User
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button>
-              <md-icon md-font-set="material-icons" class="tool">&#xE7F1;</md-icon> <!-- location_city -->
-              Zip
-            </md-button>
-          </md-list-item>
-
         </md-list>
       </md-content>
 
@@ -164,11 +55,18 @@
     <!-- Content -->
     <md-content flex layout="column" id="content">
       <md-toolbar layout="row" class="md-whiteframe-z1 headline">
-        <md-button id="main" class="menu" ng-click="mc.toggleSidenav()" aria-label="Show Sidenav" hide-gt-sm>
-          <md-icon md-font-set="material-icons">menu</md-icon>
-        </md-button>
-        <h2>Forms</h2>
+        <div class="md-toolbar-headline" layout="row">
+          <md-button id="main" class="menu" ng-click="mc.toggleSidenav()" aria-label="Show Sidenav" hide-gt-sm>
+            <md-icon md-font-set="material-icons">menu</md-icon>
+          </md-button>
+          <md-icon class="headline-icon" md-font-set="material-icons">{{mc.toolSelected.icon_id}}</md-icon>
+          <h2>{{mc.toolSelected.item}}</h2>
+        </div>
       </md-toolbar>
+
+      <md-content layout="column" flex>
+
+      </md-content>
     </md-content>
   </div>
 
@@ -178,6 +76,8 @@
   <script src="./bower_components/angular-messages/angular-messages.min.js" type="text/javascript"></script>
   <script src="./bower_components/angular-material/angular-material.min.js" type="text/javascript"></script>
 
-  <script src="./src/boot.js" type="text/javascript"></script>
+  <script src="src/app.js" type="text/javascript"></script>
+  <script src="src/services.js" type="text/javascript"></script>
+  <script src="src/controllers.js" type="text/javascript"></script>
 </body>
 </html>
