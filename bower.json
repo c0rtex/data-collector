@@ -1,0 +1,22 @@
+{
+  "name": "data-collector",
+  "authors": [
+    "Juan Esteban Garcia <ctxuser@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "^1.0.5",
+    "angular-material-icons": "^0.6.0"
+  }
+}

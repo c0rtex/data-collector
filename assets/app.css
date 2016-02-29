@@ -1,0 +1,54 @@
+/* Sidenav area */
+
+.site-sidenav, .site-sidenav.md-locked-open-add-active, .site-sidenav.md-locked-open {
+  width: 250px;
+  min-width: 250px;
+  max-width: 250px;
+}
+
+.site-sidenav md-toolbar h3 {
+  margin: auto;
+  font-weight: 500;
+}
+
+.site-sidenav md-content {
+  background-color: #5E35B1;
+  color: #ffffff;
+}
+
+.site-sidenav md-list-item > button {
+  width: 100%;
+  text-align: left !important;
+  height: 40px;
+}
+
+.site-sidenav md-icon.tool {
+  margin-right: 20px;
+  color: #ffffff;
+}
+
+.site-sidenav md-content md-list .md-button.selected {
+  background-color: #651FFF;
+}
+
+.site-sidenav md-sidenav > md-toolbar {
+  height: 64px;
+}
+
+md-list-item {
+  overflow: hidden;
+}
+
+/* Primary content area */
+
+#content md-toolbar.headline {
+  background-color: #f6f6f6;
+  color: #202020;
+}
+
+#content md-toolbar h2 {
+  font-size: 22px;
+  font-weight: 400;
+  margin-left: 24px;
+  margin-right: 24px;
+}

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Data Collector</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+  <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css" />
+  <link rel="stylesheet" href="./assets/app.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style type="text/css">
+    /**
+     * Hide when Angular is not yet loaded and initialized
+     */
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body ng-cloak ng-app="dataCollectorApp" layout="column">
+
+<!-- Container -->
+  <div flex layout="row">
+    <!-- Sidenav -->
+    <md-sidenav
+        md-component-id="left"
+        md-is-locked-open="$mdMedia('gt-sm')"
+        class="site-sidenav md-whiteframe-z2 md-primary">
+
+      <md-toolbar>
+        <h3>Data Collector</h3>
+      </md-toolbar>
+
+      <!-- Links -->
+      <md-content flex layout="column">
+        <md-list>
+
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE8AF;</md-icon> <!-- question_answer -->
+              Answer Field
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE87A;</md-icon> <!-- explore -->
+              Database
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE886;</md-icon> <!-- group_work -->
+              Entry Point
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button class="selected">
+              <md-icon md-font-set="material-icons" class="tool">&#xE8D2;</md-icon> <!-- subject -->
+              Forms
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE887;</md-icon> <!-- help -->
+              Help
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE413;</md-icon> <!-- photo_library -->
+              Image
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE8B6;</md-icon> <!-- search -->
+              Lookup
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE8DE;</md-icon> <!-- toc -->
+              Other
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE8D3;</md-icon> <!-- people -->
+              Partner
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE862;</md-icon> <!-- assignment_turned_in -->
+              Program
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE163;</md-icon> <!-- send -->
+              Question
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE3BA;</md-icon>
+              Rule
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE8B0;</md-icon>
+              Rx
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE89C;</md-icon>
+              Subset
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE873;</md-icon>
+              Text
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE926;</md-icon> <!-- euro_symbol -->
+              Tote
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE157;</md-icon> <!-- link -->
+              Url
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE7FD;</md-icon> <!-- person -->
+              User
+            </md-button>
+          </md-list-item>
+          <md-list-item>
+            <md-button>
+              <md-icon md-font-set="material-icons" class="tool">&#xE7F1;</md-icon> <!-- location_city -->
+              Zip
+            </md-button>
+          </md-list-item>
+
+        </md-list>
+      </md-content>
+
+    </md-sidenav>
+
+    <!-- Content -->
+    <md-content flex layout="column" id="content">
+      <md-toolbar class="md-whiteframe-z1 headline">
+        <h2>Answer Field</h2>
+      </md-toolbar>
+    </md-content>
+  </div>
+
+  <script src="./bower_components/angular/angular.min.js" type="text/javascript"></script>
+  <script src="./bower_components/angular-animate/angular-animate.min.js" type="text/javascript"></script>
+  <script src="./bower_components/angular-aria/angular-aria.min.js" type="text/javascript"></script>
+  <script src="./bower_components/angular-messages/angular-messages.min.js" type="text/javascript"></script>
+  <script src="./bower_components/angular-material/angular-material.min.js" type="text/javascript"></script>
+
+  <script src="./src/boot.js" type="text/javascript"></script>
+</body>
+</html>
