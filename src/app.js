@@ -4,7 +4,7 @@
   angular.module('dataCollectorApp', ['ngMaterial', 'ngRoute', 'md.data.table'])
     .config(function($mdThemingProvider) {
       $mdThemingProvider.theme('default')
-        .primaryPalette('blue')
+        .primaryPalette('pink')
         .accentPalette('red');
     })
     .config(function($routeProvider) {
@@ -14,6 +14,9 @@
         })
         .when('/answer-field', {
           templateUrl:  './src/view/answer-field.html'
+        })
+        .when('/question', {
+          templateUrl:  './src/view/question.html'
         })
         .otherwise({
           redirectTo: '/'

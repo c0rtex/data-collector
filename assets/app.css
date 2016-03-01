@@ -1,34 +1,51 @@
 /* Sidenav area */
 
 .site-sidenav, .site-sidenav.md-locked-open-add-active, .site-sidenav.md-locked-open {
-  width: 250px;
-  min-width: 250px;
-  max-width: 250px;
+  width: 220px;
+  min-width: 220px;
+  max-width: 220px;
 }
 
-.site-sidenav md-toolbar h3 {
+.site-sidenav md-toolbar h2 {
   margin: auto;
-  font-weight: 500;
+  _font-weight: 500;
+  font-size: 24px;
+  font-weight: 400;
 }
 
 .site-sidenav md-content {
-  background-color: #1E88E5;
-  color: #ffffff;
+  background-color: #E91E63;
+  color: #F5F5F5;
 }
 
 .site-sidenav md-list-item > a {
   width: 100%;
   text-align: left !important;
+  text-transform: none;
+  font-size: 18px;
+}
+
+.site-sidenav md-list-item {
   height: 40px;
+  min-height: 40px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .site-sidenav md-icon.tool {
-  margin-right: 20px;
-  color: #ffffff;
+  margin-right: 10px;
+  margin-left: 5px;
+  color: #212121;
+  height: 20px;
+  width: 20px;
+}
+
+.site-sidenav .material-icons {
+  font-size: 19px;
 }
 
 .site-sidenav md-content md-list .md-button.selected {
-  background-color: #82B1FF;
+  background-color: #F06292;
 }
 
 .site-sidenav md-toolbar {
@@ -53,16 +70,16 @@ md-list-item {
   margin-left: -8px;
 }
 .md-button.menu md-icon {
-  color: #666 !important;
+  color: #202020 !important;
 }
 
 md-icon.headline-icon {
-  color: #666 !important;
+  color: #202020 !important;
   margin-right: 10px;
 }
 
 #content md-toolbar.headline {
-  background-color: #f6f6f6;
+  background-color: #FFEB3B;
   color: #202020;
 }
 
